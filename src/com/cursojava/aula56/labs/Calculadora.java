@@ -1,0 +1,19 @@
+package com.cursojava.aula56.labs;
+
+public class Calculadora {
+
+    public static void main(String[] args) {
+
+        int x = 2;
+        int y = 6;
+
+        Operadores[] operadores = Operadores.values();
+
+        for (Operadores op: operadores) {
+            System.out.println(op + ": ");
+            System.out.println(x + " " + op.getOperacao() + " " + y + " = " + op.executarOperacao(x, y));
+        }
+        
+    }
+    
+}
