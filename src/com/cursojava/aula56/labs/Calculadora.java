@@ -9,8 +9,8 @@ public class Calculadora {
 
         Operadores[] operadores = Operadores.values();
 
-        System.out.println("----- Opreçãoes -----\n");
-        
+        System.out.println("---- Opreçãoes ----\n");
+
         for (Operadores op: operadores) {
             System.out.println(op + ": ");
             System.out.println(x + " " + op.getOperacao() + " " + y + " = " + op.executarOperacao(x, y));
