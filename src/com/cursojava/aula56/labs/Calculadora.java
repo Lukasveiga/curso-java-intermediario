@@ -1,21 +1,46 @@
 package com.cursojava.aula56.labs;
 
-public class Calculadora {
+public class Calculadora{
 
-    public static void main(String[] args) {
+    enum Operadores {
 
-        int x = 2;
-        int y = 6;
-
-        Operadores[] operadores = Operadores.values();
-
-        System.out.println("---- Opreçãoes ----\n");
-
-        for (Operadores op: operadores) {
-            System.out.println(op + ": ");
-            System.out.println(x + " " + op.getOperacao() + " " + y + " = " + op.executarOperacao(x, y));
-        }
-        
-    }
+        SOMAR('+') {
+            @Override
+            public double executarOperacao(double x, double y) {
+                return x + y;
+            }
+        }, SUBTRAIR('-') {
+            @Override
+            public double executarOperacao(double x, double y) {
+                return x - y;
+            }
+        }, MULTIPLICAR('*') {
+            @Override
+            public double executarOperacao(double x, double y) {
+                return x * y;
+            }
+        }, DIVIDIR('/') {
+            @Override
+            public double executarOperacao(double x, double y) {
+                return Math.round((x / y)*100)/100D ;
+            }
+        };
     
+        private char operacao;
+        
+    
+        private Operadores(char operacao) {
+            this.operacao = operacao;
+        }
+    
+        public char getOperacao() {
+            return operacao;
+        }
+    
+        public abstract double executarOperacao(double x, double y);
+
+    }
+
 }
+
+
