@@ -1,6 +1,6 @@
 package com.cursojava.aula72;
 
-public class ThreadTiqueTaque implements Runnable{
+public class ThreadTiqueTaque implements Runnable {
 
     TiqueTaque tt;
     Thread t;

@@ -4,8 +4,8 @@ public class TiqueTaque {
 
     boolean tique;
 
-    synchronized void tique(boolean estaExecutando) {
-        
+    public synchronized void tique(boolean estaExecutando) {
+
         if (!estaExecutando) {
             tique = true;
             notify();
@@ -18,19 +18,18 @@ public class TiqueTaque {
 
         notify();
 
-       
-         try {
+        try {
             while (tique) {
                 wait();
             }
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        
+
     }
 
-    synchronized void taque(boolean estaExecutando) {
-        
+    public synchronized void taque(boolean estaExecutando) {
+
         if (!estaExecutando) {
             tique = false;
             notify();
@@ -43,15 +42,14 @@ public class TiqueTaque {
 
         notify();
 
-       
-         try {
+        try {
             while (!tique) {
                 wait();
             }
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        
+
     }
-    
+
 }
