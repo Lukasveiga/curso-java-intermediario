@@ -9,7 +9,6 @@ public class MinhaThreadSoma implements Runnable{
     public MinhaThreadSoma(String nome, int[] nums) {
         this.nome = nome; 
         this.nums = nums;
-        new Thread(this, nome).start();  // is the same of "Thread t = new Thread(this) \n t.start();"
     }
 
     @Override
